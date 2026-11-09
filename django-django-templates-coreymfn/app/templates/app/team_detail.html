@@ -1,0 +1,21 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    <h1 class="page-title">{{ team.name }} Team</h1>
+
+    <p class="team-description">{{ team.description }}</p>
+
+    <h2 class="section-title">Team Members</h2>
+
+    <button class="members-button" id="members-button" type="button" aria-expanded="false" aria-controls="member-list">
+        See Members
+    </button>
+
+    <ul class="member-list" id="member-list" hidden>
+        {% for member in team.members %}
+            <li class="member-item">{{ member }}</li>
+        {% endfor %}
+    </ul>
+
+    <a class="back-link" href="{% url 'team_list' %}">Back to Teams</a>
+{% endblock %}

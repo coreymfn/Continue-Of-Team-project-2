@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCCA Leadership Teams</title>
+    <script src="{% static 'app/script.js' %}" defer></script>
+    <link rel="stylesheet" href="{% static 'app/style.css' %}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <img src="{% static 'app/images/bcca-logo.png' %}" alt="BCCA Logo" class="navbar-logo">
+
+        <a href="{% url 'team_list' %}">Home</a>
+    </nav>
+
+    <main class="main-content">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <p>BCCA Leadership Teams</p>
+    </footer>
+
+</body>
+</html>

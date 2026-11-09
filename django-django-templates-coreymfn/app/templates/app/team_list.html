@@ -1,0 +1,15 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    <h1 class="page-title">BCCA Leadership Project Teams</h1>
+
+    <ul class="team-list">
+        {% for team_key, team in teams.items %}
+            <li class="team-item">
+                <a class="team-link" href="{% url 'team_detail' team_key %}">
+                    {{ team.name }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
